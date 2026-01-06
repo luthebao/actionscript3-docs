@@ -5,8 +5,8 @@ This file tracks the status of the manual high-density documentation synthesis f
 ## 📊 Summary Statistics
 
 - **Target Surface**: Complete ActionScript 3.0 & Adobe AIR API (643 raw files).
-- **Consolidated Progress**: ~98% Complete.
-- **Synthesized Sheets**: 28 (Consolidated for LLMs).
+- **Consolidated Progress**: ~99% Complete.
+- **Synthesized Sheets**: 30 (Consolidated for LLMs).
 - **Claude Skills**: 5 Optimized Skill files.
 
 ---
@@ -15,7 +15,7 @@ This file tracks the status of the manual high-density documentation synthesis f
 
 Verified high-density summaries available in the [/docs](docs/) directory:
 
-- **Core Language**: [Object.md](docs/Object.md), [Array.md](docs/Array.md), [String.md](docs/String.md), [Math.md](docs/Math.md), [XML.md](docs/XML.md), [NumericTypes.md](docs/NumericTypes.md), [Vector.md](docs/Vector.md), [JSON.md](docs/JSON.md), [Boolean.md](docs/Boolean.md), [Date.md](docs/Date.md), [Function.md](docs/Function.md), [RegExp.md](docs/RegExp.md).
+- **Core Language**: [Object.md](docs/Object.md), [Array.md](docs/Array.md), [String.md](docs/String.md), [Math.md](docs/Math.md), [XML.md](docs/XML.md), [NumericTypes.md](docs/NumericTypes.md), [Vector.md](docs/Vector.md), [JSON.md](docs/JSON.md), [Boolean.md](docs/Boolean.md), [Date.md](docs/Date.md), [Function.md](docs/Function.md), [RegExp.md](docs/RegExp.md), [Errors.md](docs/Errors.md), [SpecialTypes.md](docs/SpecialTypes.md).
 - **Visual & Display**: [Display.md](docs/Display.md) (Sprites, Bitmaps, Graphics), [Geom.md](docs/Geom.md) (Matrices, Points).
 - **Interactive**: [Events.md](docs/Events.md) (DOM-like event flow), [UI.md](docs/UI.md) (Mouse, Keyboard, GameInput).
 - **Media & FX**: [Media.md](docs/Media.md) (Audio/Video), [Filters.md](docs/Filters.md) (Shaders & Blurs).
@@ -28,7 +28,12 @@ Verified high-density summaries available in the [/docs](docs/) directory:
 
 ## ✅ Completion Status
 
-All major ActionScript 3.0 and Adobe AIR API packages have been synthesized into high-density, LLM-friendly documentation. The remaining ~2% consists of rarely-used edge-case classes and deprecated APIs that are not critical for general ActionScript 3.0 development.
+All major ActionScript 3.0 and Adobe AIR API packages have been synthesized into high-density, LLM-friendly documentation. The remaining ~1% consists of rarely-used edge-case classes and deprecated APIs that are not critical for general ActionScript 3.0 development.
+
+### Recent Additions (January 2026)
+
+- **[Errors.md](docs/Errors.md)**: Complete documentation of all Error classes (Error, ArgumentError, DefinitionError, EvalError, RangeError, ReferenceError, SecurityError, SyntaxError, TypeError, URIError, VerifyError).
+- **[SpecialTypes.md](docs/SpecialTypes.md)**: Documentation of special types and language constructs (Class, Namespace, QName, TimeZone, arguments).
 
 ---
 
