@@ -1,0 +1,27 @@
+# Eventdispatcher
+
+Package| [flash.events](package-detail.html)  
+---|---  
+Class| public class EventDispatcher  
+Inheritance| EventDispatcher ![Inheritance](../../images/inherit-arrow.gif) [Object](../../Object.html)  
+Implements| [IEventDispatcher](IEventDispatcher.html)  
+Subclasses| [Accelerometer](../sensors/Accelerometer.html), [ApplicationUpdater](../../air/update/ApplicationUpdater.html), [ApplicationUpdaterUI](../../air/update/ApplicationUpdaterUI.html), [AudioDeviceManager](../media/AudioDeviceManager.html), [Camera](../media/Camera.html), [CameraRoll](../media/CameraRoll.html), [CameraUI](../media/CameraUI.html), [Context3D](../display3D/Context3D.html), [DatagramSocket](../net/DatagramSocket.html), [DeviceRotation](../sensors/DeviceRotation.html), [DisplayObject](../display/DisplayObject.html), [DNSResolver](../net/dns/DNSResolver.html), [DRMManager](../net/drm/DRMManager.html), [ExtensionContext](../external/ExtensionContext.html), [FileReference](../net/FileReference.html), [FileReferenceList](../net/FileReferenceList.html), [FileStream](../filesystem/FileStream.html), [FrameLabel](../display/FrameLabel.html), [GameInput](../ui/GameInput.html), [GameInputControl](../ui/GameInputControl.html), [Geolocation](../sensors/Geolocation.html), [HostObject](../external/HostObject.html), [Icon](../desktop/Icon.html), [IME](../system/IME.html), [License](../../air/system/License.html), [LoaderInfo](../display/LoaderInfo.html), [LocalConnection](../net/LocalConnection.html), [MediaPromise](../media/MediaPromise.html), [MessageChannel](../system/MessageChannel.html), [Microphone](../media/Microphone.html), [NativeApplication](../desktop/NativeApplication.html), [NativeMenu](../display/NativeMenu.html), [NativeMenuItem](../display/NativeMenuItem.html), [NativeProcess](../desktop/NativeProcess.html), [NativeWindow](../display/NativeWindow.html), [NetConnection](../net/NetConnection.html), [NetGroup](../net/NetGroup.html), [NetMonitor](../net/NetMonitor.html), [NetStream](../net/NetStream.html), [NetStreamPlayOptions](../net/NetStreamPlayOptions.html), [NetworkInfo](../net/NetworkInfo.html), [PermissionManager](../permissions/PermissionManager.html), [PrintJob](../printing/PrintJob.html), [RemoteNotifier](../notifications/RemoteNotifier.html), [Screen](../display/Screen.html), [ServerSocket](../net/ServerSocket.html), [ShaderJob](../display/ShaderJob.html), [SharedObject](../net/SharedObject.html), [Socket](../net/Socket.html), [Sound](../media/Sound.html), [SoundChannel](../media/SoundChannel.html), [SQLConnection](../data/SQLConnection.html), [SQLStatement](../data/SQLStatement.html), [Stage3D](../display/Stage3D.html), [StageText](../text/StageText.html), [StageVideo](../media/StageVideo.html), [StageWebView](../media/StageWebView.html), [StorageVolumeInfo](../filesystem/StorageVolumeInfo.html), [StyleSheet](../text/StyleSheet.html), [SystemUpdater](../system/SystemUpdater.html), [TextureBase](../display3D/textures/TextureBase.html), [Timer](../utils/Timer.html), [UncaughtErrorEvents](../events/UncaughtErrorEvents.html), [URLLoader](../net/URLLoader.html), [URLStream](../net/URLStream.html), [WebSocket](../../air/net/WebSocket.html), [Worker](../system/Worker.html), [XMLSignatureValidator](../security/XMLSignatureValidator.html), [XMLSocket](../net/XMLSocket.html), [ZipArchive](../../air/utils/ZipArchive.html)  
+  
+**Language version:**|  ActionScript 3.0   
+---|---  
+**Runtime version:**|   
+---|---  
+  
+The EventDispatcher class is the base class for all runtime classes that dispatch events. The EventDispatcher class implements the IEventDispatcher interface and is the base class for the DisplayObject class. The EventDispatcher class allows any object on the display list to be an event target and as such, to use the methods of the IEventDispatcher interface.
+
+Event targets are an important part of the Flash® Player and Adobe® AIR® event model. The event target serves as the focal point for how events flow through the display list hierarchy. When an event such as a mouse click or a keypress occurs, Flash Player or the AIR application dispatches an event object into the event flow from the root of the display list. The event object then makes its way through the display list until it reaches the event target, at which point it begins its return trip through the display list. This round-trip journey to the event target is conceptually divided into three phases: the capture phase comprises the journey from the root to the last node before the event target's node, the target phase comprises only the event target node, and the bubbling phase comprises any subsequent nodes encountered on the return trip to the root of the display list.
+
+In general, the easiest way for a user-defined class to gain event dispatching capabilities is to extend EventDispatcher. If this is impossible (that is, if the class is already extending another class), you can instead implement the IEventDispatcher interface, create an EventDispatcher member, and write simple hooks to route calls into the aggregated EventDispatcher.
+
+You can register functions to handle runtime events by calling the `addEventListener()` method of the object dispatching the event.
+
+[View the examples.](#includeExamplesSummary)
+
+  
+
+* * *
