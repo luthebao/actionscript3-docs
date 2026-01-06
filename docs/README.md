@@ -11,8 +11,10 @@ Complete reference documentation for ActionScript 3.0 and Adobe AIR APIs, organi
 - [Networking](#networking)
 - [Data & Storage](#data--storage)
 - [System & Runtime](#system--runtime)
-- [Text](#text)
-- [Adobe AIR Features](#adobe-air-features)
+- [Text & Internationalization](#text--internationalization)
+- [Adobe AIR Desktop Features](#adobe-air-desktop-features)
+- [Adobe AIR Mobile Features](#adobe-air-mobile-features)
+- [Advanced Security](#advanced-security)
 
 ---
 
@@ -36,6 +38,7 @@ Fundamental ActionScript 3.0 types and language features.
 | [XML.md](XML.md) | E4X XML processing | `XML`, `XMLList` |
 | [Errors.md](Errors.md) | Exception handling and error types | `Error`, `ArgumentError`, `TypeError`, etc. |
 | [SpecialTypes.md](SpecialTypes.md) | Special language constructs | `Class`, `Namespace`, `QName`, `TimeZone`, `arguments` |
+| [SpecializedErrors.md](SpecializedErrors.md) | Domain-specific error types | `SQLError`, `DRMManagerError`, `InvalidSWFError`, `PermissionError` |
 
 ---
 
@@ -48,6 +51,7 @@ Visual rendering, sprites, bitmaps, and graphics.
 | [Display.md](Display.md) | Display list, sprites, and stage | `DisplayObject`, `Sprite`, `MovieClip`, `Stage`, `Bitmap` |
 | [Geom.md](Geom.md) | Geometric primitives and transformations | `Point`, `Rectangle`, `Matrix`, `Transform` |
 | [Filters.md](Filters.md) | Visual effects and filters | `BitmapFilter`, `BlurFilter`, `DropShadowFilter`, `ShaderFilter` |
+| [Display3D.md](Display3D.md) | Stage3D GPU-accelerated 3D rendering **(Advanced)** | `Context3D`, `VertexBuffer3D`, `IndexBuffer3D`, `Program3D` |
 
 ---
 
@@ -95,50 +99,79 @@ Data structures, serialization, and persistent storage.
 
 ## System & Runtime
 
-System information, security, and runtime features.
+System information, security, concurrency, and runtime features.
 
 | Document | Description | Key Classes |
 |----------|-------------|-------------|
 | [System.md](System.md) | System capabilities, security, and workers | `Capabilities`, `Security`, `Worker`, `ApplicationDomain` |
+| [Concurrent.md](Concurrent.md) | Multithreading primitives **(Advanced)** | `Mutex`, `Condition` |
 | [Profiler.md](Profiler.md) | Performance profiling and telemetry **(AIR)** | `Telemetry`, `Sample` |
 
 ---
 
-## Text
+## Text & Internationalization
 
-Text rendering, formatting, and typography.
+Text rendering, formatting, and locale-aware operations.
 
 | Document | Description | Key Classes |
 |----------|-------------|-------------|
 | [Text.md](Text.md) | Text fields, fonts, and formatting | `TextField`, `TextFormat`, `Font`, `StyleSheet` |
+| [Globalization.md](Globalization.md) | Internationalization and localization | `DateTimeFormatter`, `NumberFormatter`, `CurrencyFormatter`, `Collator` |
 
 ---
 
-## Adobe AIR Features
+## Adobe AIR Desktop Features
 
-Desktop and mobile-specific AIR functionality.
+Desktop-specific AIR functionality.
 
 | Document | Description | Key Classes |
 |----------|-------------|-------------|
+| [Desktop.md](Desktop.md) | Native desktop integration **(AIR)** | `NativeApplication`, `Clipboard`, `NativeDragManager`, `NativeProcess`, `SystemTrayIcon`, `DockIcon` |
 | [Filesystem.md](Filesystem.md) | File system access **(AIR)** | `File`, `FileStream`, `FileMode` |
 | [Printing.md](Printing.md) | Print job management **(AIR)** | `PrintJob`, `PrintJobOptions` |
+| [HTML.md](HTML.md) | WebKit HTML rendering **(AIR)** | `HTMLLoader`, `HTMLHost` |
+| [Updates.md](Updates.md) | Application update framework **(AIR)** | `ApplicationUpdater`, `ApplicationUpdaterUI` |
+| [AIRUtilities.md](AIRUtilities.md) | ZIP, encryption, and WebSocket **(AIR)** | `ZipArchive`, `Encryption`, `Digest`, `WebSocket` |
 | [Bridge_Sensors.md](Bridge_Sensors.md) | External communication and sensors | `ExternalInterface`, `Geolocation`, `Accelerometer` |
 | [Accessibility.md](Accessibility.md) | Screen readers and accessibility | `Accessibility`, `AccessibilityProperties` |
 
 ---
 
+## Adobe AIR Mobile Features
+
+Mobile-specific AIR functionality.
+
+| Document | Description | Key Classes |
+|----------|-------------|-------------|
+| [Notifications.md](Notifications.md) | Push notifications **(AIR Mobile)** | `RemoteNotifier`, `RemoteNotifierSubscribeOptions`, `NotificationStyle` |
+| [Permissions.md](Permissions.md) | Runtime permission management **(AIR Mobile - Android)** | `PermissionManager`, `PermissionStatus` |
+
+---
+
+## Advanced Security
+
+Digital signatures, certificates, and cryptography.
+
+| Document | Description | Key Classes |
+|----------|-------------|-------------|
+| [AdvancedSecurity.md](AdvancedSecurity.md) | XML signatures and certificate validation | `XMLSignatureValidator`, `CertificateStatus`, `RevocationCheckSettings` |
+
+---
+
 ## Document Statistics
 
-- **Total Documents**: 30
-- **Core Language**: 14 documents
-- **Display & Graphics**: 3 documents
+- **Total Documents**: 41 (100% Complete! 🎉)
+- **Core Language**: 15 documents
+- **Display & Graphics**: 4 documents
 - **Events & UI**: 2 documents
 - **Media**: 1 document
 - **Networking**: 1 document
 - **Data & Storage**: 2 documents
-- **System & Runtime**: 2 documents
-- **Text**: 1 document
-- **AIR Features**: 4 documents
+- **System & Runtime**: 3 documents
+- **Text & i18n**: 2 documents
+- **AIR Desktop**: 8 documents
+- **AIR Mobile**: 2 documents
+- **Advanced Security**: 1 document
 
 ---
 
@@ -174,4 +207,4 @@ To add or update documentation:
 
 ---
 
-*Last Updated: January 2026*
+*Last Updated: January 2026 - 100% Complete!*
