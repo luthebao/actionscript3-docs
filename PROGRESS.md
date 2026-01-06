@@ -5,8 +5,8 @@ This file tracks the status of the manual high-density documentation synthesis f
 ## 📊 Summary Statistics
 
 - **Target Surface**: Complete ActionScript 3.0 & Adobe AIR API (643 raw files).
-- **Consolidated Progress**: ~85% Complete.
-- **Synthesized Sheets**: 23 (Consolidated for LLMs).
+- **Consolidated Progress**: ~87% Complete.
+- **Synthesized Sheets**: 24 (Consolidated for LLMs).
 - **Claude Skills**: 5 Optimized Skill files.
 
 ---
@@ -21,6 +21,7 @@ Verified high-density summaries available in the [/docs](docs/) directory:
 - **Media & FX**: [Media.md](docs/Media.md) (Audio/Video), [Filters.md](docs/Filters.md) (Shaders & Blurs).
 - **System & Data**: [Net.md](docs/Net.md) (Sockets, URLLoader), [Utils.md](docs/Utils.md) (ByteArray, Timers), [System.md](docs/System.md) (Security, Workers).
 - **Text & Sensors**: [Text.md](docs/Text.md) (TextField, Styles), [Bridge_Sensors.md](docs/Bridge_Sensors.md) (ExternalInterface, GPS).
+- **Printing**: [Printing.md](docs/Printing.md) (PrintJob, PaperSize).
 
 ---
 
@@ -28,11 +29,10 @@ Verified high-density summaries available in the [/docs](docs/) directory:
 
 The following areas still require manual synthesis from raw HTML source:
 
-1. **Printing API**: `flash.printing` (PrintJob, PaperSize).
-2. **Desktop Filesystem**: `flash.filesystem` (File, FileStream - AIR specific).
-3. **Advanced Profiling**: `flash.profiler`, `flash.sampler`.
-4. **Accessibility**: `flash.accessibility`.
-5. **Database/SQL**: `flash.data` (AIR Local SQL).
+1. **Desktop Filesystem**: `flash.filesystem` (File, FileStream - AIR specific).
+2. **Advanced Profiling**: `flash.profiler`.
+3. **Accessibility**: `flash.accessibility`.
+4. **Database/SQL**: `flash.data` (AIR Local SQL).
 
 ---
 
