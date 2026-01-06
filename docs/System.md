@@ -3,9 +3,11 @@
 High-level system, security, and runtime management.
 
 ## System
+
 The `System` class contains properties and methods for managing memory, garbage collection, and runtime lifecycle.
 
 ### Properties
+
 - `freeMemory: Number`: Memory (in bytes) allocated but not in use.
 - `totalMemory: uint`: Total memory (in bytes) currently in use by the runtime.
 - `privateMemory: Number`: Memory (in bytes) used by the application (AIR).
@@ -13,6 +15,7 @@ The `System` class contains properties and methods for managing memory, garbage 
 - `ime: IME`: Reference to the system's Input Method Editor.
 
 ### Methods
+
 - `gc(): void`: Forces the garbage collection process (available in debugger or AIR).
 - `exit(code: uint): void`: Closes the application.
 - `setClipboard(string: String): void`: Copies a string to the system clipboard.
@@ -23,9 +26,11 @@ The `System` class contains properties and methods for managing memory, garbage 
 ---
 
 ## Capabilities
+
 Static properties describing the client system and runtime.
 
 ### Key Properties
+
 - `os: String`: Operating system name.
 - `version: String`: Runtime version (e.g., "WIN 32,0,0,465").
 - `manufacturer: String`: Client manufacturer.
@@ -41,9 +46,11 @@ Static properties describing the client system and runtime.
 ---
 
 ## Security
+
 Manages cross-domain communication and security sandboxes.
 
 ### Sandbox Types (Constants)
+
 - `REMOTE`: Domain-based rules (web).
 - `LOCAL_WITH_FILE`: Local file, no network.
 - `LOCAL_WITH_NETWORK`: Local file, network access but no local file access.
@@ -51,6 +58,7 @@ Manages cross-domain communication and security sandboxes.
 - `APPLICATION`: AIR application sandbox (full access to its own package).
 
 ### Properties & Methods
+
 - `sandboxType: String`: Current security sandbox.
 - `allowDomain(...domains): void`: Grants SWFs in specified domains access to the current SWF.
 - `allowInsecureDomain(...domains): void`: Grants HTTP SWFs access to the current HTTPS SWF.
@@ -60,14 +68,17 @@ Manages cross-domain communication and security sandboxes.
 ---
 
 ## ApplicationDomain
+
 Containers for groups of class definitions. Allows versioning and definition sharing.
 
 ### Properties
+
 - `currentDomain: ApplicationDomain`: (Static) The current domain.
 - `parentDomain: ApplicationDomain`: The parent domain in the hierarchy.
 - `domainMemory: ByteArray`: Global memory for specialized operations.
 
 ### Methods
+
 - `getDefinition(name: String): Object`: Retrieves a public definition (Class, Function, etc.) by name.
 - `hasDefinition(name: String): Boolean`: Checks if a definition exists.
 - `getQualifiedDefinitionNames(): Vector.<String>`: Lists all class names in the domain.
@@ -75,9 +86,11 @@ Containers for groups of class definitions. Allows versioning and definition sha
 ---
 
 ## Worker & Concurrency (AIR 3.4+)
+
 Enables multi-threaded execution through Workers.
 
 ### Worker
+
 - `isSupported: Boolean`: (Static) Whether Workers are available.
 - `current: Worker`: (Static) The worker running the current code.
 - `isPrimordial: Boolean`: Whether this is the main worker.
@@ -88,21 +101,25 @@ Enables multi-threaded execution through Workers.
 - `createMessageChannel(receiver: Worker): MessageChannel`: Creates a communication link.
 
 ### MessageChannel
+
 - `send(message: *): void`: Queues a message for the receiver.
 - `receive(blockUntilMessage: Boolean = false): *`: Retrieves a message.
 - `messageAvailable: Boolean`: Whether messages are in the queue.
 - `Event.CHANNEL_MESSAGE`: Dispatched when a message arrives.
 
 ### WorkerDomain
+
 - `current: WorkerDomain`: (Static) Manager for all workers in the security domain.
 - `createWorker(swf: ByteArray): Worker`: Spawns a new worker from SWF bytes.
 
 ---
 
 ## LoaderContext
+
 Configures how content is treated when loaded via `Loader.load()`.
 
 ### Properties
+
 - `applicationDomain: ApplicationDomain`: The domain to load classes into.
 - `checkPolicyFile: Boolean`: Whether to look for a policy file on the server.
 - `securityDomain: SecurityDomain`: (Flash Player only) The security sandbox to place the loaded content in.
@@ -111,4 +128,5 @@ Configures how content is treated when loaded via `Loader.load()`.
 ---
 
 ## Functions
+
 - `fscommand(command: String, args: String): void`: Sends a message to the program hosting Flash Player (e.g., browser or projector).

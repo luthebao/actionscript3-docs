@@ -11,16 +11,19 @@ Screen reader and assistive technology support for visually impaired users.
 Static class for managing communication with screen readers and querying accessibility support.
 
 ### Static Properties
+
 - `active:Boolean`: (Read-only) Returns `true` if a screen reader is currently active and communicating with the application.
 
 ### Static Methods
 
 #### updateProperties():void
+
 Forces the runtime to update accessibility information and notify the screen reader of changes.
 
 Call this after dynamically changing accessible properties (via `AccessibilityProperties`) to ensure screen readers receive updates immediately.
 
 **Example**:
+
 ```actionscript
 var button:Sprite = new Sprite();
 button.accessibilityProperties = new AccessibilityProperties();
@@ -30,6 +33,7 @@ Accessibility.updateProperties(); // Notify screen reader
 ```
 
 ### Checking Support
+
 Use `Capabilities.hasAccessibility` to determine if the OS supports accessibility aids:
 
 ```actionscript
@@ -51,9 +55,11 @@ if (Capabilities.hasAccessibility) {
 Defines accessible properties for a `DisplayObject`. Assign an instance to `DisplayObject.accessibilityProperties` to make an object accessible to screen readers.
 
 ### Constructor
+
 - `new AccessibilityProperties()`: Creates an AccessibilityProperties object.
 
 ### Properties
+
 - `name:String`: The accessible name of the object (read by screen readers). Equivalent to an `alt` attribute in HTML.
 - `description:String`: A detailed description of the object. Provides additional context beyond the name.
 - `shortcut:String`: Keyboard shortcut for the object (e.g., "Ctrl+S"). Screen readers announce this to users.
@@ -62,6 +68,7 @@ Defines accessible properties for a `DisplayObject`. Assign an instance to `Disp
 - `noAutoLabeling:Boolean`: If `true`, prevents automatic label assignment from adjacent text. By default, Flash may associate nearby text as a label.
 
 ### Example: Accessible Button
+
 ```actionscript
 var button:Sprite = new Sprite();
 button.graphics.beginFill(0x0000FF);
@@ -77,6 +84,7 @@ Accessibility.updateProperties();
 ```
 
 ### Example: Hiding Decorative Elements
+
 ```actionscript
 var decorativeImage:Bitmap = new Bitmap(bitmapData);
 var props:AccessibilityProperties = new AccessibilityProperties();
@@ -95,6 +103,7 @@ Base class for custom accessibility implementations. Extend this class to provid
 **Note**: Most applications do not need to implement this class. Use `AccessibilityProperties` for standard accessibility needs.
 
 ### Properties
+
 - `errno:uint`: Error code for the most recent accessibility operation.
 - `stub:Boolean`: If `true`, indicates this is a placeholder implementation with no real functionality.
 
@@ -103,33 +112,43 @@ Base class for custom accessibility implementations. Extend this class to provid
 Override these methods to provide custom accessibility behavior:
 
 #### get_accRole(childID:uint):uint
+
 Returns the MSAA role constant for the object or child.
 
 #### get_accName(childID:uint):String
+
 Returns the accessible name for the object or child.
 
 #### get_accValue(childID:uint):String
+
 Returns the accessible value for the object or child (e.g., slider position, text field content).
 
 #### get_accState(childID:uint):uint
+
 Returns the MSAA state flags for the object or child (e.g., focused, checked, unavailable).
 
 #### get_accDefaultAction(childID:uint):String
+
 Returns the default action description (e.g., "Press" for a button).
 
 #### accDoDefaultAction(childID:uint):void
+
 Performs the default action for the object or child (e.g., click a button, toggle a checkbox).
 
 #### get_accFocus():uint
+
 Returns the childID of the currently focused child, or 0 if the parent is focused.
 
 #### get_accSelection():Array
+
 Returns an array of childIDs for selected children.
 
 #### isLabeledBy(labelBounds:Rectangle):Boolean
+
 Called by the runtime to determine if a text object labels this object.
 
 ### Example: Custom Slider Accessibility
+
 ```actionscript
 package {
     import flash.accessibility.AccessibilityImplementation;
@@ -174,6 +193,7 @@ package {
 Interface for objects that support text search by screen readers. Implement this to allow screen readers to search within your custom text components.
 
 ### Methods
+
 - `searchText(text:String):int`: Searches for `text` in the object. Returns the index of the match, or -1 if not found.
 
 **Note**: Very rarely used. Most applications use `TextField` which already supports searchable text.
@@ -185,10 +205,12 @@ Interface for objects that support text search by screen readers. Implement this
 Interface for objects that support basic text selection by screen readers. Implement this for custom text components.
 
 ### Properties
+
 - `selectionAnchorIndex:int`: The character index where the selection starts.
 - `selectionActiveIndex:int`: The character index where the selection ends.
 
 ### Methods
+
 - `setSelection(anchorIndex:int, activeIndex:int):void`: Sets the text selection range.
 
 **Note**: Most applications use `TextField` which already implements this interface.
@@ -198,6 +220,7 @@ Interface for objects that support basic text selection by screen readers. Imple
 ## Best Practices
 
 ### 1. Always Provide Names
+
 Every interactive element should have an accessible name:
 
 ```actionscript
@@ -213,6 +236,7 @@ var button:Sprite = createButton();
 ```
 
 ### 2. Hide Decorative Elements
+
 Mark non-functional, decorative elements as silent:
 
 ```actionscript
@@ -223,6 +247,7 @@ backgroundImage.accessibilityProperties = props;
 ```
 
 ### 3. Use Descriptions for Complex Objects
+
 For objects that need more explanation:
 
 ```actionscript
@@ -234,6 +259,7 @@ Accessibility.updateProperties();
 ```
 
 ### 4. Update After Dynamic Changes
+
 Call `Accessibility.updateProperties()` after changing accessible properties:
 
 ```actionscript
@@ -244,12 +270,14 @@ function updateButtonLabel(newLabel:String):void {
 ```
 
 ### 5. Test with Actual Screen Readers
+
 - **Windows**: JAWS, NVDA, Narrator
 - **macOS**: VoiceOver
 
 Enable the screen reader and navigate your app using only the keyboard to ensure all functionality is accessible.
 
 ### 6. Support Keyboard Navigation
+
 Accessibility depends on keyboard support. Ensure all interactive elements are reachable via Tab key:
 
 ```actionscript
@@ -258,6 +286,7 @@ button.tabIndex = 1;
 ```
 
 ### 7. Provide Focus Indicators
+
 Visual focus indicators help all users, not just screen reader users:
 
 ```actionscript
@@ -312,19 +341,23 @@ Common MSAA state flags for `get_accState()`:
 ## Platform Notes
 
 ### Windows
+
 - Supports MSAA (Microsoft Active Accessibility) for JAWS, NVDA, and Narrator.
 - AIR 2+ supports JAWS 11 or higher.
 - Flash Player supports most Windows screen readers.
 
 ### macOS
+
 - Supports VoiceOver via the macOS accessibility APIs.
 - Flash Player and AIR integrate with VoiceOver automatically if accessibility properties are set.
 
 ### Mobile & TV
+
 - **Not supported** on mobile browsers, AIR for iOS, AIR for Android, or AIR for TV.
 - Mobile platforms have their own native accessibility APIs that Flash/AIR does not integrate with.
 
 ### Linux
+
 - Limited support. Flash Player may work with Orca screen reader, but support is not guaranteed.
 
 ---
@@ -332,6 +365,7 @@ Common MSAA state flags for `get_accState()`:
 ## Common Use Cases
 
 ### Accessible Form
+
 ```actionscript
 // Text input field
 var nameField:TextField = new TextField();
@@ -354,6 +388,7 @@ Accessibility.updateProperties();
 ```
 
 ### Accessible Navigation Menu
+
 ```actionscript
 for (var i:int = 0; i < menuItems.length; i++) {
     var item:Sprite = menuItems[i];

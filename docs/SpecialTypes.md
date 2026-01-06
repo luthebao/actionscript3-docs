@@ -42,6 +42,7 @@ The `Namespace` class contains methods and properties for defining and working w
 **Constructor**: `Namespace(prefix:String = "", uri:String = "")`
 
 **Properties**:
+
 - `prefix: String`: The namespace prefix.
 - `uri: String`: The Uniform Resource Identifier (URI) of the namespace.
 
@@ -87,6 +88,7 @@ obj.internalMethod();  // Accessible with namespace
 ```
 
 **Built-in Namespaces**:
+
 - `public`: Standard public access.
 - `private`: Accessible only within the defining class.
 - `protected`: Accessible within the class and subclasses.
@@ -98,11 +100,13 @@ obj.internalMethod();  // Accessible with namespace
 
 The `QName` (Qualified Name) class represents a qualified name of a property: a namespace and a local name.
 
-**Constructor**: 
+**Constructor**:
+
 - `QName(uri:Namespace, localName:String)`
 - `QName(uri:String, localName:String)`
 
 **Properties**:
+
 - `localName: String`: The local name part.
 - `uri: String`: The namespace URI.
 
@@ -138,19 +142,23 @@ The `TimeZone` class provides information about time zones for use in date calcu
 **Note**: Available only in Adobe AIR applications. Information varies by operating system.
 
 **Static Properties**:
+
 - `availableTimeZoneNames: Vector.<String>` (read-only): List of available time zone names from the OS.
 - `default: TimeZone` (read-only): The default time zone for the system.
 
 **Static Methods**:
+
 - `getTimeZone(name:String): TimeZone`: Creates a TimeZone object for the specified time zone name.
 
 **Instance Properties**:
+
 - `displayName: String` (read-only): Human-readable name of the time zone.
 - `id: String` (read-only): Unique identifier for the time zone.
 - `rawOffset: int` (read-only): Offset from UTC in milliseconds (without DST).
 - `useDaylightTime: Boolean` (read-only): Whether the time zone uses daylight saving time.
 
 **Instance Methods**:
+
 - `getOffset(date:Date): int`: Returns the time zone offset in milliseconds for a specific date.
 
 **Example**:
@@ -180,6 +188,7 @@ trace("Offset: " + (offset / 3600000) + " hours"); // Offset in hours
 The `arguments` object is an implicit local variable available within all function bodies. It contains an array of all arguments passed to the function.
 
 **Properties**:
+
 - `length: uint`: Number of arguments passed to the function.
 - `callee: Function`: Reference to the currently executing function.
 - `[index]`: Access individual arguments by index (0-based).

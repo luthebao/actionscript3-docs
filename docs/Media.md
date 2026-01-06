@@ -5,7 +5,9 @@ Core multimedia support for audio and video playback and capture.
 ## Audio
 
 ### Sound
+
 The primary class for loading and playing audio (MP3).
+
 - **Methods**:
   - `load(stream: URLRequest, context: SoundLoaderContext = null): void`: Loads external MP3.
   - `play(startTime: Number = 0, loops: int = 0, sndTransform: SoundTransform = null): SoundChannel`: Starts playback.
@@ -17,7 +19,9 @@ The primary class for loading and playing audio (MP3).
 - **Properties**: `bytesLoaded`, `bytesTotal`, `isBuffering`, `length` (ms), `url`, `id3` (`ID3Info`).
 
 ### SoundChannel
+
 Returned by `Sound.play()`. Controls an active sound instance.
+
 - **Methods**: `stop(): void`
 - **Properties**:
   - `position: Number`: Current playback position (ms).
@@ -26,14 +30,18 @@ Returned by `Sound.play()`. Controls an active sound instance.
 - **Events**: `Event.SOUND_COMPLETE`: Dispatched when the sound finishes.
 
 ### SoundTransform
+
 Controls volume and multi-channel routing.
+
 - **Properties**:
   - `volume: Number`: (0 to 1).
   - `pan: Number`: (-1 left, 1 right).
   - `leftToLeft`, `leftToRight`, `rightToLeft`, `rightToRight`: Fine-grained channel routing.
 
 ### SoundMixer
+
 Static class for global audio control.
+
 - **Methods**:
   - `stopAll(): void`: Stops every sound currently playing.
   - `computeSpectrum(outputArray: ByteArray, FFTMode: Boolean = false, stretchFactor: int = 0): void`: Takes a snapshot of current frequencies/waveforms.
@@ -47,7 +55,9 @@ Static class for global audio control.
 ## Video & Camera
 
 ### Video
+
 A display object (`DisplayObject`) that renders video from a `NetStream` or `Camera`.
+
 - **Methods**:
   - `attachNetStream(netStream: NetStream): void`: Connects to a network stream.
   - `attachCamera(camera: Camera): void`: Connects to a local camera.
@@ -58,7 +68,9 @@ A display object (`DisplayObject`) that renders video from a `NetStream` or `Cam
   - `videoWidth / videoHeight: int`: Intrinsic dimensions of the source.
 
 ### Camera
+
 Static access to local camera hardware.
+
 - **Static Methods**:
   - `getCamera(name: String = null): Camera`: Returns the camera instance.
 - **Methods**:
@@ -74,7 +86,9 @@ Static access to local camera hardware.
 ---
 
 ## Microphone
+
 Static access to audio input hardware.
+
 - **Static Methods**:
   - `getMicrophone(index: int = -1): Microphone`: Basic microphone.
   - `getEnhancedMicrophone(index: int = -1): Microphone`: Microphone with Acoustic Echo Cancellation (AEC).

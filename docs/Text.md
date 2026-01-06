@@ -1,9 +1,11 @@
 # ActionScript 3.0 Text Rendering API Reference
 
 ## flash.text.TextField
+
 The core class for all text display (Labels) and user input (Inputs). Inherits from `InteractiveObject`.
 
 ### Text Content & Alignment
+
 - `text`: Raw text string.
 - `htmlText`: Text with HTML tags (supports a subset like `<b>`, `<i>`, `<a>`, `<p>`, `<span>`, `<font>`, `<img>`).
 - `autoSize`: Automatically resize the field. Use `TextFieldAutoSize` constants: `LEFT`, `RIGHT`, `CENTER`, `NONE`.
@@ -11,6 +13,7 @@ The core class for all text display (Labels) and user input (Inputs). Inherits f
 - `multiline`: If `true`, field supports multiple lines.
 
 ### Input & Interaction
+
 - `type`: Either `TextFieldType.DYNAMIC` (default) or `TextFieldType.INPUT`.
 - `selectable`: Whether user can select text.
 - `restrict`: Restricts characters user can enter (e.g., `"0-9"`).
@@ -19,6 +22,7 @@ The core class for all text display (Labels) and user input (Inputs). Inherits f
 - `useRichTextClipboard`: Preserves formatting when copying/pasting.
 
 ### Formatting & Styles
+
 - `defaultTextFormat`: The `TextFormat` applied to any NEW text inserted.
 - `setTextFormat(format:TextFormat, beginIndex:int = -1, endIndex:int = -1)`: Applies formatting to a range or the whole field (existing text).
 - `getTextFormat(beginIndex:int = -1, endIndex:int = -1)`: Returns the format for a range.
@@ -27,6 +31,7 @@ The core class for all text display (Labels) and user input (Inputs). Inherits f
 - `sharpness`, `thickness`, `antiAliasType`: Rendering quality settings.
 
 ### Scrolling & Metrics
+
 - `scrollV` / `scrollH`: Current vertical/horizontal scroll position (1-based).
 - `maxScrollV` / `maxScrollH`: Maximum scroll values.
 - `textWidth` / `textHeight`: Dimensions of the text content itself (independent of field size).
@@ -34,6 +39,7 @@ The core class for all text display (Labels) and user input (Inputs). Inherits f
 - `getLineMetrics(lineIndex:int)`: Returns `TextLineMetrics` (ascent, descent, leading, etc.).
 
 ### Events
+
 - `Event.CHANGE`: Dispatched when user changes input text.
 - `TextEvent.TEXT_INPUT`: Dispatched before text is committed to the field. Can be cancelled.
 - `TextEvent.LINK`: Dispatched when user clicks an `<a href="event:myData">` link.
@@ -42,6 +48,7 @@ The core class for all text display (Labels) and user input (Inputs). Inherits f
 ---
 
 ## flash.text.TextFormat
+
 Defines character and paragraph formatting.
 
 - `font`: Font name string (e.g., `"Arial"`, `"_sans"`).
@@ -60,6 +67,7 @@ Defines character and paragraph formatting.
 ---
 
 ## flash.text.StyleSheet
+
 Handles CSS styles for `htmlText`.
 
 - `parseCSS(CSSText:String)`: Parses a CSS string.
@@ -70,6 +78,7 @@ Handles CSS styles for `htmlText`.
 ---
 
 ## flash.text.Font
+
 Manages embedded fonts.
 
 - `static enumerateFonts(enumerateDeviceFonts:Boolean = false)`: Returns list of available `Font` objects.
@@ -81,6 +90,7 @@ Manages embedded fonts.
 ---
 
 ## Utility Classes
+
 - `TextFieldAutoSize`: `CENTER`, `LEFT`, `NONE`, `RIGHT`.
 - `TextFieldType`: `DYNAMIC`, `INPUT`.
 - `TextFormatAlign`: `CENTER`, `JUSTIFY`, `LEFT`, `RIGHT`.

@@ -1,57 +1,45 @@
 # ActionScript 3.0 Documentation
 
-Complete ActionScript 3.0 API documentation, available in both original HTML and LLM-friendly markdown formats.
+This repository contains a complete, high-density reference for ActionScript 3.0 and the Adobe AIR API. The documentation has been manually synthesized into 41 LLM-friendly Markdown files to provide a concise, high-signal resource for developers and AI agents.
 
-## 📚 Documentation Formats
+## 🚀 How to Use
 
-### 🚀 Concise Summaries (New & Recommended)
+When working in this workspace, refer to the **[/docs](docs/)** folder.
 
-The [/docs](docs/) directory contains manually synthesized, high-density documentation designed specifically for LLM context windows. These files consolidate entire packages into single reference sheets.
+- **For AI Agents**: Refer to `llms.txt` in the root for a structural overview of the documentation.
+- **For Developers**: Use the [Table of Contents](docs/README.md) to find specific packages or class groups.
 
-**Status**: ~98% Complete. See [PROGRESS.md](PROGRESS.md) for detailed coverage.
+## 📖 Content Summary
 
-### Raw Markdown conversion
+### Core Language
 
-The `markdown-docs/` directory remains available with 643 raw converted files for deep class-level lookups.
+Fundamental types and features including [Object](docs/Object.md), [Array](docs/Array.md), [XML](docs/XML.md), [JSON](docs/JSON.md), and [Error handling](docs/Errors.md).
 
-### Original HTML Documentation
+### Graphics & Visuals
 
-The `html-docs/` directory contains the original HTML documentation from [airsdk.dev](https://airsdk.dev/reference/actionscript/3.0/).
+Complete coverage of the [Display List](docs/Display.md) (Sprites, Bitmaps), [Stage3D GPU rendering](docs/Display3D.md), [Text rendering](docs/Text.md), and [Visual Filters](docs/Filters.md).
+
+### Interactivity & OS
+
+Hardware-level access for [Mouse/Keyboard/Touch](docs/UI.md), [Event Handling](docs/Events.md), [Filesystem IO](docs/Filesystem.md), and [SQLite Databases](docs/Database.md).
+
+### System & Networking
+
+Low-level access for [Sockets and Networking](docs/Net.md), [Workers and Concurrency](docs/Concurrent.md), [Binary Data/ByteArrays](docs/Utils.md), and [External/Sensor Bridge](docs/Bridge_Sensors.md).
+
+## 📄 Documentation index
+
+A comprehensive index and categorized list can be found in **[docs/README.md](docs/README.md)**.
 
 ## 🤖 Claude Skills for VSCode Copilot
 
 The `.claude/skills/` directory contains ActionScript 3.0 programming skills for AI assistants:
 
-1. **actionscript-basics.md** - Core language features, OOP, classes, functions
-2. **actionscript-collections.md** - Arrays, Vectors, Dictionaries, data structures
-3. **actionscript-display-graphics.md** - Display list, graphics, bitmaps
-4. **actionscript-events.md** - Event system, async patterns, timers
-5. **actionscript-api-reference.md** - Quick API reference and navigation guide
+1. **actionscript-basics.md** - Core language features.
+2. **actionscript-collections.md** - Data structures.
+3. **actionscript-display-graphics.md** - Visual engine.
+4. **actionscript-events.md** - Async patterns.
+5. **actionscript-api-reference.md** - Navigation guide.
 
-These skills help AI coding assistants understand ActionScript 3.0 patterns and best practices.
-
-## 🔧 Tools & Contribution
-
-### 🤖 AI Agent Synthesis Guide
-
-If you are an AI agent continuing this work, please follow the [STYLE_GUIDE.md](STYLE_GUIDE.md) in the `/docs` folder. It contains instructions on how to synthesize high-density package summaries, formatting standards, and content selection rules.
-
-## 📖 Key Resources
-
-### Original Documentation
-
-- [All Classes](https://airsdk.dev/reference/actionscript/3.0/all-classes.html)
-- [Package Summary](https://airsdk.dev/reference/actionscript/3.0/package-summary.html)
-
-### Project Tracking
-
-- [Documentation Progress](PROGRESS.md): Detailed status and pending tasks.
-- [AI Style Guide](STYLE_GUIDE.md): Rules for high-density synthesis.
-
-## 🚀 Use Cases
-
-1. **AI-Assisted Coding** - Use Claude skills in VSCode Copilot
-2. **Documentation Search** - grep through markdown files
-3. **Learning** - Read clean markdown docs
-4. **Reference** - Quick API lookups
-5. **LLM Context** - Feed docs to language models
+---
+*Based on the original Adobe/Harman documentation from airsdk.dev*

@@ -5,7 +5,9 @@ The `flash.geom` package provides classes for geometric math, coordinate systems
 ## Basic Geometry
 
 ### Point
+
 Represents a location in a 2D coordinate system (x, y).
+
 - **Properties**:
   - `x, y: Number` — Coordinates.
   - `length: Number` (Read-only) — Distance from (0,0) to this point.
@@ -21,7 +23,9 @@ Represents a location in a 2D coordinate system (x, y).
   - `polar(len: Number, angle: Number): Point` — Creates a point from polar coordinates (angle in radians).
 
 ### Rectangle
+
 Represents a rectangular area (x, y, width, height).
+
 - **Properties**:
   - `x, y, width, height: Number`.
   - `left, right, top, bottom: Number` — Derived boundary values.
@@ -40,7 +44,9 @@ Represents a rectangular area (x, y, width, height).
 ## Transformations
 
 ### Matrix
+
 A 3x3 affine transformation matrix for 2D.
+
 - **Components**: `a` (scaleX/cos), `b` (skewY/sin), `c` (skewX/-sin), `d` (scaleY/cos), `tx` (translateX), `ty` (translateY).
 - **Methods**:
   - `translate(tx: Number, ty: Number)`: Moves the object.
@@ -52,14 +58,18 @@ A 3x3 affine transformation matrix for 2D.
   - `createBox(...)`, `createGradientBox(...)`: Convenience setup.
 
 ### ColorTransform
+
 Adjusts color values (Red, Green, Blue, Alpha) of a display object.
+
 - **Properties**:
   - `redMultiplier, greenMultiplier, blueMultiplier, alphaMultiplier: Number` (0 to 1).
   - `redOffset, greenOffset, blueOffset, alphaOffset: Number` (-255 to 255).
   - `color: uint` — Hex RGB value (sets offsets to 0 and multipliers to 0, except for specific hex bits).
 
 ### Transform
+
 Connects a `Matrix` or `ColorTransform` to a `DisplayObject`.
+
 - **Usage**: `mySprite.transform.matrix = myMatrix;`
 - **Properties**:
   - `matrix: Matrix` — 2D transformation.
@@ -71,6 +81,7 @@ Connects a `Matrix` or `ColorTransform` to a `DisplayObject`.
 ---
 
 ## Example: Rotation around a custom point
+
 ```actionscript
 var m:Matrix = sprite.transform.matrix;
 m.translate(-pivotX, -pivotY); // Move point to origin
