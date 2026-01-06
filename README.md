@@ -31,15 +31,5 @@ Low-level access for [Sockets and Networking](docs/Net.md), [Workers and Concurr
 
 A comprehensive index and categorized list can be found in **[docs/README.md](docs/README.md)**.
 
-## 🤖 Claude Skills for VSCode Copilot
-
-The `.claude/skills/` directory contains ActionScript 3.0 programming skills for AI assistants:
-
-1. **actionscript-basics.md** - Core language features.
-2. **actionscript-collections.md** - Data structures.
-3. **actionscript-display-graphics.md** - Visual engine.
-4. **actionscript-events.md** - Async patterns.
-5. **actionscript-api-reference.md** - Navigation guide.
-
 ---
 *Based on the original Adobe/Harman documentation from airsdk.dev*
