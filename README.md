@@ -8,7 +8,7 @@ Complete ActionScript 3.0 API documentation, available in both original HTML and
 
 The [/docs](docs/) directory contains manually synthesized, high-density documentation designed specifically for LLM context windows. These files consolidate entire packages into single reference sheets.
 
-**Status**: ~85% Complete. See [PROGRESS.md](PROGRESS.md) for detailed coverage and pending items.
+**Status**: ~98% Complete. See [PROGRESS.md](PROGRESS.md) for detailed coverage.
 
 ### Raw Markdown conversion
 
