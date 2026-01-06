@@ -36,10 +36,12 @@ Verified high-density summaries available in the [/docs](docs/) directory:
 ### Final Documentation Phase (January 2026)
 
 **Phase 1 - Core Types & Special Constructs:**
+
 - **[Errors.md](docs/Errors.md)**: Complete documentation of all Error classes (Error, ArgumentError, DefinitionError, EvalError, RangeError, ReferenceError, SecurityError, SyntaxError, TypeError, URIError, VerifyError).
 - **[SpecialTypes.md](docs/SpecialTypes.md)**: Documentation of special types and language constructs (Class, Namespace, QName, TimeZone, arguments).
 
 **Phase 2 - Advanced Features & AIR APIs:**
+
 - **[Concurrent.md](docs/Concurrent.md)**: Multithreading primitives (Mutex, Condition) for Worker coordination.
 - **[Desktop.md](docs/Desktop.md)**: AIR desktop integration (NativeApplication, Clipboard, NativeDragManager, NativeProcess, system tray/dock icons).
 - **[Globalization.md](docs/Globalization.md)**: Internationalization support (DateTimeFormatter, NumberFormatter, CurrencyFormatter, Collator, locale-aware string operations).
